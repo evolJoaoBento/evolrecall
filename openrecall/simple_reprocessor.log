@@ -1,0 +1,351 @@
+2025-08-06 10:00:29,295 - WARNING - sentence-transformers not available, using dummy embeddings
+2025-08-06 10:00:29,296 - INFO - Starting simple optimized reprocessing...
+2025-08-06 10:00:29,308 - INFO - [OK] Ollama connection successful
+2025-08-06 10:00:29,665 - INFO - Filtered 3314 entries for processing (from 4342 total)
+2025-08-06 10:00:29,665 - INFO - Processing 3314 entries with 4 workers
+2025-08-06 10:02:38,861 - INFO - Batch: 20 updated, 0 errors, 23.7s avg, 4 had screenshots
+2025-08-06 10:04:20,247 - INFO - Batch: 20 updated, 0 errors, 20.6s avg, 1 had screenshots
+2025-08-06 10:05:16,300 - INFO - Progress: 50/3314 entries processed
+2025-08-06 10:06:23,598 - INFO - Batch: 20 updated, 0 errors, 23.7s avg, 3 had screenshots
+2025-08-06 10:08:27,407 - INFO - Batch: 20 updated, 0 errors, 22.8s avg, 5 had screenshots
+2025-08-06 10:10:02,616 - INFO - Progress: 100/3314 entries processed
+2025-08-06 10:10:02,628 - INFO - Batch: 20 updated, 0 errors, 23.4s avg, 7 had screenshots
+2025-08-06 10:10:02,629 - INFO - Checkpoint saved at 100 entries
+2025-08-06 10:12:02,947 - INFO - Batch: 20 updated, 0 errors, 20.8s avg, 3 had screenshots
+2025-08-06 10:14:41,431 - INFO - Batch: 20 updated, 0 errors, 31.4s avg, 13 had screenshots
+2025-08-06 10:15:31,715 - INFO - Progress: 150/3314 entries processed
+2025-08-06 10:16:30,708 - INFO - Batch: 20 updated, 0 errors, 22.0s avg, 7 had screenshots
+2025-08-06 10:18:29,020 - INFO - Batch: 20 updated, 0 errors, 26.2s avg, 6 had screenshots
+2025-08-06 10:20:33,634 - INFO - Progress: 200/3314 entries processed
+2025-08-06 10:20:33,646 - INFO - Batch: 20 updated, 0 errors, 23.1s avg, 3 had screenshots
+2025-08-06 10:20:33,647 - INFO - Checkpoint saved at 200 entries
+2025-08-06 10:22:49,029 - INFO - Batch: 20 updated, 0 errors, 29.3s avg, 11 had screenshots
+2025-08-06 10:24:45,449 - INFO - Batch: 20 updated, 0 errors, 20.1s avg, 1 had screenshots
+2025-08-06 10:29:32,472 - INFO - Loaded 1228 processed IDs from cache
+2025-08-06 10:29:37,935 - INFO - Use pytorch device_name: cpu
+2025-08-06 10:29:37,935 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-08-06 10:29:40,512 - INFO - [OK] Embedding model loaded
+2025-08-06 10:29:40,513 - INFO - Starting simple optimized reprocessing...
+2025-08-06 10:29:40,544 - INFO - [OK] Ollama connection successful
+2025-08-06 10:29:40,887 - INFO - Filtered 3111 entries for processing (from 4342 total)
+2025-08-06 10:29:40,888 - INFO - Processing 3111 entries with 4 workers
+2025-08-06 10:31:36,109 - INFO - Batch: 20 updated, 0 errors, 21.8s avg, 9 had screenshots
+2025-08-06 10:33:25,711 - INFO - Batch: 20 updated, 0 errors, 22.2s avg, 4 had screenshots
+2025-08-06 10:34:34,815 - INFO - Progress: 50/3111 entries processed
+2025-08-06 10:35:44,617 - INFO - Batch: 20 updated, 0 errors, 26.1s avg, 15 had screenshots
+2025-08-06 10:37:40,895 - INFO - Batch: 20 updated, 0 errors, 24.0s avg, 10 had screenshots
+2025-08-06 10:39:35,664 - INFO - Progress: 100/3111 entries processed
+2025-08-06 10:39:36,218 - INFO - Batch: 20 updated, 0 errors, 21.9s avg, 4 had screenshots
+2025-08-06 10:39:36,219 - INFO - Checkpoint saved at 100 entries
+2025-08-06 10:41:24,924 - INFO - Batch: 20 updated, 0 errors, 22.5s avg, 7 had screenshots
+2025-08-06 10:43:30,006 - INFO - Batch: 20 updated, 0 errors, 25.9s avg, 11 had screenshots
+2025-08-06 10:44:45,944 - INFO - Progress: 150/3111 entries processed
+2025-08-06 10:45:48,814 - INFO - Batch: 20 updated, 0 errors, 25.8s avg, 9 had screenshots
+2025-08-06 10:47:34,273 - INFO - Batch: 20 updated, 0 errors, 22.0s avg, 2 had screenshots
+2025-08-06 10:49:13,786 - INFO - Progress: 200/3111 entries processed
+2025-08-06 10:49:14,364 - INFO - Batch: 20 updated, 0 errors, 20.4s avg, 2 had screenshots
+2025-08-06 10:49:14,365 - INFO - Checkpoint saved at 200 entries
+2025-08-06 10:51:03,563 - INFO - Batch: 20 updated, 0 errors, 22.2s avg, 3 had screenshots
+2025-08-06 10:53:31,679 - INFO - Batch: 20 updated, 0 errors, 31.2s avg, 13 had screenshots
+2025-08-06 10:54:31,151 - INFO - Progress: 250/3111 entries processed
+2025-08-06 10:55:52,695 - INFO - Batch: 20 updated, 0 errors, 24.7s avg, 5 had screenshots
+2025-08-06 10:58:30,704 - INFO - Batch: 20 updated, 0 errors, 31.0s avg, 12 had screenshots
+2025-08-06 11:01:19,507 - INFO - Progress: 300/3111 entries processed
+2025-08-06 11:01:20,233 - INFO - Batch: 20 updated, 0 errors, 33.0s avg, 14 had screenshots
+2025-08-06 11:01:20,234 - INFO - Checkpoint saved at 300 entries
+2025-08-06 11:03:37,853 - INFO - Batch: 20 updated, 0 errors, 28.7s avg, 13 had screenshots
+2025-08-06 11:05:43,783 - INFO - Batch: 20 updated, 0 errors, 27.7s avg, 10 had screenshots
+2025-08-06 11:06:37,198 - INFO - Progress: 350/3111 entries processed
+2025-08-06 11:07:23,611 - INFO - Batch: 20 updated, 0 errors, 18.9s avg, 3 had screenshots
+2025-08-06 11:09:02,227 - INFO - Batch: 20 updated, 0 errors, 21.0s avg, 3 had screenshots
+2025-08-06 11:12:21,010 - INFO - Progress: 400/3111 entries processed
+2025-08-06 11:12:21,505 - INFO - Batch: 20 updated, 0 errors, 37.4s avg, 18 had screenshots
+2025-08-06 11:12:21,506 - INFO - Checkpoint saved at 400 entries
+2025-08-06 11:14:58,832 - INFO - Batch: 20 updated, 0 errors, 32.6s avg, 20 had screenshots
+2025-08-06 11:17:46,544 - INFO - Batch: 20 updated, 0 errors, 33.1s avg, 20 had screenshots
+2025-08-06 11:19:02,654 - INFO - Progress: 450/3111 entries processed
+2025-08-06 11:20:29,254 - INFO - Batch: 20 updated, 0 errors, 32.8s avg, 20 had screenshots
+2025-08-06 11:23:29,730 - INFO - Batch: 20 updated, 0 errors, 35.3s avg, 20 had screenshots
+2025-08-06 11:26:15,207 - INFO - Progress: 500/3111 entries processed
+2025-08-06 11:26:15,518 - INFO - Batch: 20 updated, 0 errors, 33.7s avg, 20 had screenshots
+2025-08-06 11:26:15,519 - INFO - Checkpoint saved at 500 entries
+2025-08-06 11:29:40,970 - INFO - Batch: 20 updated, 0 errors, 41.2s avg, 18 had screenshots
+2025-08-06 11:33:08,888 - INFO - Batch: 20 updated, 0 errors, 40.2s avg, 20 had screenshots
+2025-08-06 11:34:42,790 - INFO - Progress: 550/3111 entries processed
+2025-08-06 11:36:33,091 - INFO - Batch: 20 updated, 0 errors, 40.4s avg, 18 had screenshots
+2025-08-06 11:39:57,314 - INFO - Batch: 20 updated, 0 errors, 41.3s avg, 18 had screenshots
+2025-08-06 11:42:34,358 - INFO - Progress: 600/3111 entries processed
+2025-08-06 11:42:34,871 - INFO - Batch: 20 updated, 0 errors, 30.7s avg, 18 had screenshots
+2025-08-06 11:42:34,872 - INFO - Checkpoint saved at 600 entries
+2025-08-06 11:45:08,243 - INFO - Batch: 20 updated, 0 errors, 32.1s avg, 20 had screenshots
+2025-08-06 11:47:40,666 - INFO - Batch: 20 updated, 0 errors, 30.1s avg, 20 had screenshots
+2025-08-06 11:48:52,753 - INFO - Progress: 650/3111 entries processed
+2025-08-06 11:50:26,256 - INFO - Batch: 20 updated, 0 errors, 33.1s avg, 20 had screenshots
+2025-08-06 11:53:01,334 - INFO - Batch: 20 updated, 0 errors, 31.2s avg, 20 had screenshots
+2025-08-06 11:55:47,723 - INFO - Progress: 700/3111 entries processed
+2025-08-06 11:55:48,322 - INFO - Batch: 20 updated, 0 errors, 32.6s avg, 20 had screenshots
+2025-08-06 11:55:48,324 - INFO - Checkpoint saved at 700 entries
+2025-08-06 11:58:54,797 - INFO - Batch: 20 updated, 0 errors, 38.8s avg, 20 had screenshots
+2025-08-06 12:01:26,290 - INFO - Batch: 20 updated, 0 errors, 30.6s avg, 20 had screenshots
+2025-08-06 12:02:25,954 - INFO - Progress: 750/3111 entries processed
+2025-08-06 12:03:54,168 - INFO - Batch: 20 updated, 0 errors, 29.6s avg, 18 had screenshots
+2025-08-06 12:06:13,412 - INFO - Batch: 20 updated, 0 errors, 26.3s avg, 12 had screenshots
+2025-08-06 12:08:47,519 - INFO - Progress: 800/3111 entries processed
+2025-08-06 12:08:48,043 - INFO - Batch: 20 updated, 0 errors, 30.3s avg, 17 had screenshots
+2025-08-06 12:08:48,044 - INFO - Checkpoint saved at 800 entries
+2025-08-06 12:11:40,613 - INFO - Batch: 20 updated, 0 errors, 35.4s avg, 20 had screenshots
+2025-08-06 12:14:29,883 - INFO - Batch: 20 updated, 0 errors, 33.3s avg, 20 had screenshots
+2025-08-06 12:15:43,564 - INFO - Progress: 850/3111 entries processed
+2025-08-06 12:17:18,366 - INFO - Batch: 20 updated, 0 errors, 33.7s avg, 20 had screenshots
+2025-08-06 12:20:11,185 - INFO - Batch: 20 updated, 0 errors, 34.8s avg, 20 had screenshots
+2025-08-06 12:22:51,377 - INFO - Progress: 900/3111 entries processed
+2025-08-06 12:22:51,793 - INFO - Batch: 20 updated, 0 errors, 32.5s avg, 20 had screenshots
+2025-08-06 12:22:51,794 - INFO - Checkpoint saved at 900 entries
+2025-08-06 12:25:36,832 - INFO - Batch: 20 updated, 0 errors, 33.2s avg, 20 had screenshots
+2025-08-06 12:28:22,195 - INFO - Batch: 20 updated, 0 errors, 32.5s avg, 20 had screenshots
+2025-08-06 12:29:30,205 - INFO - Progress: 950/3111 entries processed
+2025-08-06 12:31:12,342 - INFO - Batch: 20 updated, 0 errors, 34.1s avg, 20 had screenshots
+2025-08-06 12:34:04,462 - INFO - Batch: 20 updated, 0 errors, 35.3s avg, 20 had screenshots
+2025-08-06 12:36:50,038 - INFO - Progress: 1000/3111 entries processed
+2025-08-06 12:36:50,248 - INFO - Batch: 20 updated, 0 errors, 32.8s avg, 20 had screenshots
+2025-08-06 12:36:50,249 - INFO - Checkpoint saved at 1000 entries
+2025-08-06 12:39:37,167 - INFO - Batch: 20 updated, 0 errors, 32.8s avg, 20 had screenshots
+2025-08-06 12:42:29,261 - INFO - Batch: 20 updated, 0 errors, 34.0s avg, 20 had screenshots
+2025-08-06 12:43:41,887 - INFO - Progress: 1050/3111 entries processed
+2025-08-06 12:45:02,584 - INFO - Batch: 20 updated, 0 errors, 31.9s avg, 20 had screenshots
+2025-08-06 12:47:47,103 - INFO - Batch: 20 updated, 0 errors, 32.2s avg, 20 had screenshots
+2025-08-06 12:50:31,349 - INFO - Progress: 1100/3111 entries processed
+2025-08-06 12:50:31,952 - INFO - Batch: 20 updated, 0 errors, 33.2s avg, 20 had screenshots
+2025-08-06 12:50:31,954 - INFO - Checkpoint saved at 1100 entries
+2025-08-06 12:53:27,990 - INFO - Batch: 20 updated, 0 errors, 34.8s avg, 20 had screenshots
+2025-08-06 12:56:31,706 - INFO - Batch: 20 updated, 0 errors, 36.6s avg, 20 had screenshots
+2025-08-06 12:57:32,669 - INFO - Progress: 1150/3111 entries processed
+2025-08-06 12:58:59,194 - INFO - Batch: 20 updated, 0 errors, 30.2s avg, 20 had screenshots
+2025-08-06 13:01:28,205 - INFO - Batch: 20 updated, 0 errors, 29.8s avg, 20 had screenshots
+2025-08-06 13:04:00,517 - INFO - Progress: 1200/3111 entries processed
+2025-08-06 13:04:00,748 - INFO - Batch: 20 updated, 0 errors, 30.9s avg, 20 had screenshots
+2025-08-06 13:04:00,749 - INFO - Checkpoint saved at 1200 entries
+2025-08-06 13:06:34,205 - INFO - Batch: 20 updated, 0 errors, 29.8s avg, 20 had screenshots
+2025-08-06 13:09:28,633 - INFO - Batch: 20 updated, 0 errors, 35.2s avg, 20 had screenshots
+2025-08-06 13:10:41,016 - INFO - Progress: 1250/3111 entries processed
+2025-08-06 13:12:09,204 - INFO - Batch: 20 updated, 0 errors, 32.7s avg, 20 had screenshots
+2025-08-06 13:14:55,904 - INFO - Batch: 20 updated, 0 errors, 33.2s avg, 20 had screenshots
+2025-08-06 13:17:40,377 - INFO - Progress: 1300/3111 entries processed
+2025-08-06 13:17:41,200 - INFO - Batch: 20 updated, 0 errors, 32.7s avg, 20 had screenshots
+2025-08-06 13:17:41,201 - INFO - Checkpoint saved at 1300 entries
+2025-08-06 13:20:45,513 - INFO - Batch: 20 updated, 0 errors, 36.2s avg, 20 had screenshots
+2025-08-06 13:23:28,656 - INFO - Batch: 20 updated, 0 errors, 32.9s avg, 20 had screenshots
+2025-08-06 13:24:41,777 - INFO - Progress: 1350/3111 entries processed
+2025-08-06 13:26:20,903 - INFO - Batch: 20 updated, 0 errors, 34.8s avg, 20 had screenshots
+2025-08-06 13:29:15,109 - INFO - Batch: 20 updated, 0 errors, 34.4s avg, 20 had screenshots
+2025-08-06 13:31:49,497 - INFO - Progress: 1400/3111 entries processed
+2025-08-06 13:31:49,784 - INFO - Batch: 20 updated, 0 errors, 31.4s avg, 20 had screenshots
+2025-08-06 13:31:49,785 - INFO - Checkpoint saved at 1400 entries
+2025-08-06 13:34:49,021 - INFO - Batch: 20 updated, 0 errors, 35.9s avg, 20 had screenshots
+2025-08-06 13:37:45,126 - INFO - Batch: 20 updated, 0 errors, 36.6s avg, 20 had screenshots
+2025-08-06 13:38:57,166 - INFO - Progress: 1450/3111 entries processed
+2025-08-06 13:40:29,567 - INFO - Batch: 20 updated, 0 errors, 32.5s avg, 20 had screenshots
+2025-08-06 13:43:14,624 - INFO - Batch: 20 updated, 0 errors, 33.1s avg, 20 had screenshots
+2025-08-06 13:45:44,023 - INFO - Progress: 1500/3111 entries processed
+2025-08-06 13:45:44,269 - INFO - Batch: 20 updated, 0 errors, 30.0s avg, 20 had screenshots
+2025-08-06 13:45:44,271 - INFO - Checkpoint saved at 1500 entries
+2025-08-06 13:48:44,172 - INFO - Batch: 20 updated, 0 errors, 35.6s avg, 20 had screenshots
+2025-08-06 13:51:20,316 - INFO - Batch: 20 updated, 0 errors, 32.1s avg, 20 had screenshots
+2025-08-06 13:52:21,722 - INFO - Progress: 1550/3111 entries processed
+2025-08-06 13:54:00,320 - INFO - Batch: 20 updated, 0 errors, 31.3s avg, 20 had screenshots
+2025-08-06 13:56:31,871 - INFO - Batch: 20 updated, 0 errors, 30.6s avg, 20 had screenshots
+2025-08-06 13:59:02,362 - INFO - Progress: 1600/3111 entries processed
+2025-08-06 13:59:02,567 - INFO - Batch: 20 updated, 0 errors, 30.0s avg, 20 had screenshots
+2025-08-06 13:59:02,568 - INFO - Checkpoint saved at 1600 entries
+2025-08-06 14:01:37,187 - INFO - Batch: 20 updated, 0 errors, 30.7s avg, 20 had screenshots
+2025-08-06 14:04:06,495 - INFO - Batch: 20 updated, 0 errors, 29.9s avg, 20 had screenshots
+2025-08-06 14:05:18,746 - INFO - Progress: 1650/3111 entries processed
+2025-08-06 14:06:50,976 - INFO - Batch: 20 updated, 0 errors, 33.1s avg, 20 had screenshots
+2025-08-06 14:09:09,236 - INFO - Batch: 20 updated, 0 errors, 28.6s avg, 20 had screenshots
+2025-08-06 14:11:34,691 - INFO - Progress: 1700/3111 entries processed
+2025-08-06 14:11:34,953 - INFO - Batch: 20 updated, 0 errors, 28.7s avg, 20 had screenshots
+2025-08-06 14:11:34,954 - INFO - Checkpoint saved at 1700 entries
+2025-08-06 14:14:04,325 - INFO - Batch: 20 updated, 0 errors, 29.8s avg, 20 had screenshots
+2025-08-06 14:16:20,920 - INFO - Batch: 20 updated, 0 errors, 27.3s avg, 20 had screenshots
+2025-08-06 14:17:21,850 - INFO - Progress: 1750/3111 entries processed
+2025-08-06 14:18:42,096 - INFO - Batch: 20 updated, 0 errors, 28.0s avg, 20 had screenshots
+2025-08-06 14:20:59,948 - INFO - Batch: 20 updated, 0 errors, 27.8s avg, 20 had screenshots
+2025-08-06 14:23:36,799 - INFO - Progress: 1800/3111 entries processed
+2025-08-06 14:23:37,082 - INFO - Batch: 20 updated, 0 errors, 30.8s avg, 20 had screenshots
+2025-08-06 14:23:37,083 - INFO - Checkpoint saved at 1800 entries
+2025-08-06 14:26:09,165 - INFO - Batch: 20 updated, 0 errors, 30.9s avg, 20 had screenshots
+2025-08-06 14:28:39,154 - INFO - Batch: 20 updated, 0 errors, 29.8s avg, 20 had screenshots
+2025-08-06 14:29:46,860 - INFO - Progress: 1850/3111 entries processed
+2025-08-06 14:31:15,030 - INFO - Batch: 20 updated, 0 errors, 31.4s avg, 20 had screenshots
+2025-08-06 14:34:02,388 - INFO - Batch: 20 updated, 0 errors, 33.3s avg, 20 had screenshots
+2025-08-06 14:37:05,114 - INFO - Progress: 1900/3111 entries processed
+2025-08-06 14:37:05,408 - INFO - Batch: 20 updated, 0 errors, 36.1s avg, 20 had screenshots
+2025-08-06 14:37:05,409 - INFO - Checkpoint saved at 1900 entries
+2025-08-06 14:40:05,780 - INFO - Batch: 20 updated, 0 errors, 36.2s avg, 20 had screenshots
+2025-08-06 14:42:55,988 - INFO - Batch: 20 updated, 0 errors, 34.3s avg, 20 had screenshots
+2025-08-06 14:44:07,189 - INFO - Progress: 1950/3111 entries processed
+2025-08-06 14:45:40,637 - INFO - Batch: 20 updated, 0 errors, 33.3s avg, 20 had screenshots
+2025-08-06 14:48:27,260 - INFO - Batch: 20 updated, 0 errors, 32.9s avg, 20 had screenshots
+2025-08-06 14:51:20,984 - INFO - Progress: 2000/3111 entries processed
+2025-08-06 14:51:21,507 - INFO - Batch: 20 updated, 0 errors, 35.1s avg, 19 had screenshots
+2025-08-06 14:51:21,508 - INFO - Checkpoint saved at 2000 entries
+2025-08-06 14:53:16,194 - INFO - Batch: 20 updated, 0 errors, 23.8s avg, 6 had screenshots
+2025-08-06 14:54:53,348 - INFO - Batch: 20 updated, 0 errors, 19.8s avg, 0 had screenshots
+2025-08-06 14:56:00,685 - INFO - Progress: 2050/3111 entries processed
+2025-08-06 14:56:46,362 - INFO - Batch: 20 updated, 0 errors, 23.1s avg, 6 had screenshots
+2025-08-06 14:58:25,820 - INFO - Batch: 20 updated, 0 errors, 19.8s avg, 0 had screenshots
+2025-08-06 15:00:05,122 - INFO - Progress: 2100/3111 entries processed
+2025-08-06 15:00:05,631 - INFO - Batch: 20 updated, 0 errors, 20.0s avg, 0 had screenshots
+2025-08-06 15:00:05,632 - INFO - Checkpoint saved at 2100 entries
+2025-08-06 15:01:45,737 - INFO - Batch: 20 updated, 0 errors, 19.8s avg, 0 had screenshots
+2025-08-06 15:03:26,172 - INFO - Batch: 20 updated, 0 errors, 19.9s avg, 0 had screenshots
+2025-08-06 15:04:14,326 - INFO - Progress: 2150/3111 entries processed
+2025-08-06 15:05:12,488 - INFO - Batch: 20 updated, 0 errors, 21.1s avg, 1 had screenshots
+2025-08-06 15:07:49,988 - INFO - Batch: 20 updated, 0 errors, 31.6s avg, 16 had screenshots
+2025-08-06 15:10:31,430 - INFO - Progress: 2200/3111 entries processed
+2025-08-06 15:10:31,897 - INFO - Batch: 20 updated, 0 errors, 33.2s avg, 18 had screenshots
+2025-08-06 15:10:31,898 - INFO - Checkpoint saved at 2200 entries
+2025-08-06 15:13:28,590 - INFO - Batch: 20 updated, 0 errors, 35.1s avg, 20 had screenshots
+2025-08-06 15:16:18,373 - INFO - Batch: 20 updated, 0 errors, 34.2s avg, 20 had screenshots
+2025-08-06 15:17:53,139 - INFO - Progress: 2250/3111 entries processed
+2025-08-06 15:19:11,267 - INFO - Batch: 20 updated, 0 errors, 34.6s avg, 20 had screenshots
+2025-08-06 15:22:03,267 - INFO - Batch: 20 updated, 0 errors, 34.5s avg, 20 had screenshots
+2025-08-06 15:24:44,970 - INFO - Progress: 2300/3111 entries processed
+2025-08-06 15:24:45,265 - INFO - Batch: 20 updated, 0 errors, 32.3s avg, 20 had screenshots
+2025-08-06 15:24:45,266 - INFO - Checkpoint saved at 2300 entries
+2025-08-06 15:27:08,688 - INFO - Batch: 20 updated, 0 errors, 28.9s avg, 20 had screenshots
+2025-08-06 15:29:34,241 - INFO - Batch: 20 updated, 0 errors, 29.1s avg, 20 had screenshots
+2025-08-06 15:30:40,916 - INFO - Progress: 2350/3111 entries processed
+2025-08-06 15:31:19,597 - INFO - Batch: 20 updated, 0 errors, 20.5s avg, 7 had screenshots
+2025-08-06 15:32:55,108 - INFO - Batch: 20 updated, 0 errors, 18.8s avg, 0 had screenshots
+2025-08-06 15:34:34,704 - INFO - Progress: 2400/3111 entries processed
+2025-08-06 15:34:35,208 - INFO - Batch: 20 updated, 0 errors, 19.6s avg, 0 had screenshots
+2025-08-06 15:34:35,209 - INFO - Checkpoint saved at 2400 entries
+2025-08-06 15:36:02,111 - INFO - Batch: 20 updated, 0 errors, 17.9s avg, 0 had screenshots
+2025-08-06 15:37:49,217 - INFO - Batch: 19 updated, 0 errors, 20.7s avg, 4 had screenshots
+2025-08-06 15:38:40,133 - INFO - Progress: 2450/3111 entries processed
+2025-08-06 15:39:33,415 - INFO - Batch: 20 updated, 0 errors, 21.9s avg, 6 had screenshots
+2025-08-06 15:41:32,166 - INFO - Batch: 20 updated, 0 errors, 23.5s avg, 11 had screenshots
+2025-08-06 15:43:27,670 - INFO - Progress: 2500/3111 entries processed
+2025-08-06 15:43:28,165 - INFO - Batch: 20 updated, 0 errors, 21.3s avg, 3 had screenshots
+2025-08-06 15:43:28,166 - INFO - Checkpoint saved at 2500 entries
+2025-08-06 15:45:25,377 - INFO - Batch: 20 updated, 0 errors, 25.2s avg, 10 had screenshots
+2025-08-06 15:47:04,800 - INFO - Batch: 20 updated, 0 errors, 19.8s avg, 0 had screenshots
+2025-08-06 15:47:54,560 - INFO - Progress: 2550/3111 entries processed
+2025-08-06 15:48:38,017 - INFO - Batch: 20 updated, 0 errors, 18.7s avg, 0 had screenshots
+2025-08-06 15:50:29,514 - INFO - Batch: 20 updated, 0 errors, 22.1s avg, 6 had screenshots
+2025-08-06 15:52:05,663 - INFO - Progress: 2600/3111 entries processed
+2025-08-06 15:52:06,191 - INFO - Batch: 20 updated, 0 errors, 19.5s avg, 0 had screenshots
+2025-08-06 15:52:06,192 - INFO - Checkpoint saved at 2600 entries
+2025-08-06 15:54:05,267 - INFO - Batch: 20 updated, 0 errors, 22.0s avg, 4 had screenshots
+2025-08-06 15:56:06,838 - INFO - Batch: 20 updated, 0 errors, 25.3s avg, 8 had screenshots
+2025-08-06 15:57:13,747 - INFO - Progress: 2650/3111 entries processed
+2025-08-06 15:58:01,238 - INFO - Batch: 20 updated, 0 errors, 23.3s avg, 3 had screenshots
+2025-08-06 15:59:45,477 - INFO - Batch: 20 updated, 0 errors, 21.7s avg, 3 had screenshots
+2025-08-06 16:01:45,146 - INFO - Progress: 2700/3111 entries processed
+2025-08-06 16:01:45,638 - INFO - Batch: 20 updated, 0 errors, 22.0s avg, 3 had screenshots
+2025-08-06 16:01:45,639 - INFO - Checkpoint saved at 2700 entries
+2025-08-06 16:03:42,608 - INFO - Batch: 20 updated, 0 errors, 25.0s avg, 8 had screenshots
+2025-08-06 16:05:49,208 - INFO - Batch: 20 updated, 0 errors, 25.6s avg, 9 had screenshots
+2025-08-06 16:06:51,528 - INFO - Progress: 2750/3111 entries processed
+2025-08-06 16:08:04,466 - INFO - Batch: 20 updated, 0 errors, 25.5s avg, 7 had screenshots
+2025-08-06 16:10:09,289 - INFO - Batch: 20 updated, 0 errors, 25.3s avg, 7 had screenshots
+2025-08-06 16:12:42,195 - INFO - Progress: 2800/3111 entries processed
+2025-08-06 16:12:42,677 - INFO - Batch: 20 updated, 0 errors, 32.2s avg, 16 had screenshots
+2025-08-06 16:12:42,678 - INFO - Checkpoint saved at 2800 entries
+2025-08-06 16:14:47,422 - INFO - Batch: 20 updated, 0 errors, 23.9s avg, 10 had screenshots
+2025-08-06 16:16:39,811 - INFO - Batch: 20 updated, 0 errors, 22.4s avg, 6 had screenshots
+2025-08-06 16:17:40,403 - INFO - Progress: 2850/3111 entries processed
+2025-08-06 16:18:48,879 - INFO - Batch: 20 updated, 0 errors, 23.8s avg, 7 had screenshots
+2025-08-06 16:20:39,048 - INFO - Batch: 20 updated, 0 errors, 24.5s avg, 10 had screenshots
+2025-08-06 16:22:39,457 - INFO - Progress: 2900/3111 entries processed
+2025-08-06 16:22:39,958 - INFO - Batch: 20 updated, 0 errors, 24.4s avg, 6 had screenshots
+2025-08-06 16:22:39,959 - INFO - Checkpoint saved at 2900 entries
+2025-08-06 16:24:36,599 - INFO - Batch: 20 updated, 0 errors, 22.8s avg, 5 had screenshots
+2025-08-06 16:26:41,296 - INFO - Batch: 20 updated, 0 errors, 27.0s avg, 10 had screenshots
+2025-08-06 16:27:37,709 - INFO - Progress: 2950/3111 entries processed
+2025-08-06 16:28:23,793 - INFO - Batch: 20 updated, 0 errors, 18.8s avg, 4 had screenshots
+2025-08-06 16:30:36,903 - INFO - Batch: 20 updated, 0 errors, 25.6s avg, 8 had screenshots
+2025-08-06 16:32:24,569 - INFO - Progress: 3000/3111 entries processed
+2025-08-06 16:32:25,089 - INFO - Batch: 20 updated, 0 errors, 20.4s avg, 4 had screenshots
+2025-08-06 16:32:25,091 - INFO - Checkpoint saved at 3000 entries
+2025-08-06 16:34:21,312 - INFO - Batch: 20 updated, 0 errors, 24.6s avg, 6 had screenshots
+2025-08-06 16:36:04,199 - INFO - Batch: 20 updated, 0 errors, 21.6s avg, 4 had screenshots
+2025-08-06 16:37:08,946 - INFO - Progress: 3050/3111 entries processed
+2025-08-06 16:37:59,242 - INFO - Batch: 20 updated, 0 errors, 23.5s avg, 4 had screenshots
+2025-08-06 16:40:03,328 - INFO - Batch: 20 updated, 0 errors, 23.2s avg, 5 had screenshots
+2025-08-06 16:41:54,104 - INFO - Progress: 3100/3111 entries processed
+2025-08-06 16:41:54,647 - INFO - Batch: 20 updated, 0 errors, 23.2s avg, 10 had screenshots
+2025-08-06 16:41:54,648 - INFO - Checkpoint saved at 3100 entries
+2025-08-06 16:43:00,852 - INFO - ============================================================
+2025-08-06 16:43:00,853 - INFO - FINAL SUMMARY:
+2025-08-06 16:43:00,853 - INFO - Total processed: 3111
+2025-08-06 16:43:00,853 - INFO - Successfully updated: 3110
+2025-08-06 16:43:00,853 - INFO - Errors: 0
+2025-08-06 16:43:00,853 - INFO - Total time: 22400.0s
+2025-08-06 16:43:00,854 - INFO - Avg time per entry: 7.20s
+2025-08-06 16:43:00,854 - INFO - ============================================================
+2025-08-06 17:04:15,557 - INFO - Loaded 4341 processed IDs from cache
+2025-08-06 17:04:22,721 - INFO - Use pytorch device_name: cpu
+2025-08-06 17:04:22,721 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-08-06 17:04:25,981 - INFO - [OK] Embedding model loaded
+2025-08-06 17:04:25,982 - INFO - Starting simple optimized reprocessing...
+2025-08-06 17:04:26,053 - INFO - [OK] Ollama connection successful
+2025-08-06 17:04:26,094 - INFO - Filtered 566 entries for processing (from 4909 total)
+2025-08-06 17:04:26,095 - INFO - Processing 566 entries with 4 workers
+2025-08-06 17:06:58,091 - INFO - Batch: 20 updated, 0 errors, 29.5s avg, 20 had screenshots
+2025-08-06 17:09:33,149 - INFO - Batch: 20 updated, 0 errors, 31.2s avg, 20 had screenshots
+2025-08-06 17:10:55,940 - INFO - Progress: 50/566 entries processed
+2025-08-06 17:12:00,821 - INFO - Batch: 20 updated, 0 errors, 29.4s avg, 20 had screenshots
+2025-08-06 17:14:29,963 - INFO - Batch: 20 updated, 0 errors, 29.8s avg, 20 had screenshots
+2025-08-06 17:17:27,708 - INFO - Progress: 100/566 entries processed
+2025-08-06 17:17:28,257 - INFO - Batch: 20 updated, 0 errors, 35.6s avg, 20 had screenshots
+2025-08-06 17:17:28,258 - INFO - Checkpoint saved at 100 entries
+2025-08-06 17:19:57,246 - INFO - Batch: 20 updated, 0 errors, 29.9s avg, 20 had screenshots
+2025-08-06 17:22:42,441 - INFO - Batch: 20 updated, 0 errors, 33.2s avg, 20 had screenshots
+2025-08-06 17:24:19,431 - INFO - Progress: 150/566 entries processed
+2025-08-06 17:25:31,227 - INFO - Batch: 20 updated, 0 errors, 33.7s avg, 20 had screenshots
+2025-08-06 17:28:31,519 - INFO - Batch: 20 updated, 0 errors, 35.6s avg, 20 had screenshots
+2025-08-06 17:31:32,323 - INFO - Progress: 200/566 entries processed
+2025-08-06 17:31:32,951 - INFO - Batch: 20 updated, 0 errors, 36.8s avg, 20 had screenshots
+2025-08-06 17:31:32,955 - INFO - Checkpoint saved at 200 entries
+2025-08-06 17:34:28,822 - INFO - Batch: 20 updated, 0 errors, 35.3s avg, 20 had screenshots
+2025-08-06 17:37:21,506 - INFO - Batch: 20 updated, 0 errors, 34.3s avg, 20 had screenshots
+2025-08-06 17:38:59,134 - INFO - Progress: 250/566 entries processed
+2025-08-06 17:40:11,646 - INFO - Batch: 20 updated, 0 errors, 34.4s avg, 20 had screenshots
+2025-08-06 17:43:10,779 - INFO - Batch: 20 updated, 0 errors, 35.6s avg, 20 had screenshots
+2025-08-06 17:46:11,641 - INFO - Progress: 300/566 entries processed
+2025-08-06 17:46:12,208 - INFO - Batch: 20 updated, 0 errors, 36.1s avg, 20 had screenshots
+2025-08-06 17:46:12,210 - INFO - Checkpoint saved at 300 entries
+2025-08-06 17:48:58,550 - INFO - Batch: 20 updated, 0 errors, 34.2s avg, 20 had screenshots
+2025-08-06 17:51:44,785 - INFO - Batch: 20 updated, 0 errors, 32.6s avg, 20 had screenshots
+2025-08-06 17:53:19,384 - INFO - Progress: 350/566 entries processed
+2025-08-06 17:54:37,548 - INFO - Batch: 20 updated, 0 errors, 34.3s avg, 20 had screenshots
+2025-08-06 17:57:27,344 - INFO - Batch: 20 updated, 0 errors, 34.3s avg, 20 had screenshots
+2025-08-06 17:59:54,664 - INFO - Progress: 400/566 entries processed
+2025-08-06 17:59:55,220 - INFO - Batch: 20 updated, 0 errors, 29.5s avg, 20 had screenshots
+2025-08-06 17:59:55,221 - INFO - Checkpoint saved at 400 entries
+2025-08-06 18:02:50,472 - INFO - Batch: 20 updated, 0 errors, 35.2s avg, 20 had screenshots
+2025-08-06 18:05:47,636 - INFO - Batch: 20 updated, 0 errors, 35.1s avg, 20 had screenshots
+2025-08-06 18:07:15,906 - INFO - Progress: 450/566 entries processed
+2025-08-06 18:08:26,557 - INFO - Batch: 20 updated, 0 errors, 31.9s avg, 20 had screenshots
+2025-08-06 18:11:01,064 - INFO - Batch: 20 updated, 0 errors, 31.0s avg, 20 had screenshots
+2025-08-06 18:13:26,398 - INFO - Progress: 500/566 entries processed
+2025-08-06 18:13:26,651 - INFO - Batch: 20 updated, 0 errors, 29.2s avg, 20 had screenshots
+2025-08-06 18:13:26,652 - INFO - Checkpoint saved at 500 entries
+2025-08-06 18:15:51,713 - INFO - Batch: 20 updated, 0 errors, 26.8s avg, 13 had screenshots
+2025-08-06 18:18:04,417 - INFO - Batch: 20 updated, 0 errors, 25.7s avg, 9 had screenshots
+2025-08-06 18:19:21,152 - INFO - Progress: 550/566 entries processed
+2025-08-06 18:20:17,149 - INFO - Batch: 20 updated, 0 errors, 28.5s avg, 10 had screenshots
+2025-08-06 18:21:32,907 - WARNING - sentence-transformers not available, using dummy embeddings
+2025-08-06 18:21:32,908 - INFO - Starting simple optimized reprocessing...
+2025-08-06 18:21:32,928 - INFO - [OK] Ollama connection successful
+2025-08-06 18:21:32,988 - INFO - Filtered 3831 entries for processing (from 4981 total)
+2025-08-06 18:21:32,989 - INFO - Processing 3831 entries with 4 workers
+2025-08-06 18:25:07,022 - INFO - Loaded 4843 processed IDs from cache
+2025-08-06 18:25:17,637 - WARNING - sentence-transformers not available, using dummy embeddings
+2025-08-06 18:25:17,639 - INFO - Starting simple optimized reprocessing...
+2025-08-06 18:25:17,671 - INFO - [OK] Ollama connection successful
+2025-08-06 18:25:17,713 - INFO - Filtered 136 entries for processing (from 4983 total)
+2025-08-06 18:25:17,714 - INFO - Processing 136 entries with 4 workers
+2025-08-06 18:27:41,440 - INFO - Batch: 20 updated, 0 errors, 28.0s avg, 20 had screenshots

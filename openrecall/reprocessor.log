@@ -1,0 +1,39 @@
+2025-08-06 09:27:57,036 - WARNING - sentence-transformers not available, using dummy embeddings
+2025-08-06 09:27:57,041 - INFO - Starting optimized enhanced multimodal reprocessing...
+2025-08-06 09:27:57,453 - INFO - Filtered 3328 entries for processing (from 4342 total)
+2025-08-06 09:27:57,453 - INFO - Processing 3328 entries in batches of 10
+2025-08-06 09:27:57,453 - INFO - Processing batch 1/333 (10 entries)
+2025-08-06 09:29:28,533 - ERROR - Error in LLM processing: 
+2025-08-06 09:29:28,538 - ERROR - Error in LLM processing: 
+2025-08-06 09:29:28,539 - ERROR - Error in LLM processing: 
+2025-08-06 09:30:59,530 - ERROR - Error in LLM processing: 
+2025-08-06 09:30:59,540 - INFO - Batch 1: 10 updated, 0 errors, 115.9s avg
+2025-08-06 09:31:00,044 - INFO - Processing batch 2/333 (10 entries)
+2025-08-06 09:32:30,528 - ERROR - Error in LLM processing: 
+2025-08-06 09:32:30,528 - ERROR - Error in LLM processing: 
+2025-08-06 09:32:30,529 - ERROR - Error in LLM processing: 
+2025-08-06 09:33:58,991 - INFO - Batch 2: 10 updated, 0 errors, 114.3s avg
+2025-08-06 09:33:59,495 - INFO - Processing batch 3/333 (10 entries)
+2025-08-06 09:35:30,525 - ERROR - Error in LLM processing: 
+2025-08-06 09:35:30,525 - ERROR - Error in LLM processing: 
+2025-08-06 09:37:01,535 - ERROR - Error in LLM processing: 
+2025-08-06 09:37:01,546 - INFO - Batch 3: 10 updated, 0 errors, 110.6s avg
+2025-08-06 09:37:02,052 - INFO - Processing batch 4/333 (10 entries)
+2025-08-06 09:39:06,827 - INFO - Batch 4: 10 updated, 0 errors, 72.0s avg
+2025-08-06 09:39:07,338 - INFO - Processing batch 5/333 (10 entries)
+2025-08-06 09:41:23,437 - INFO - Batch 5: 10 updated, 0 errors, 78.3s avg
+2025-08-06 09:41:23,438 - INFO - Checkpoint saved at batch 5
+2025-08-06 09:41:23,938 - INFO - Processing batch 6/333 (10 entries)
+2025-08-06 09:42:54,538 - ERROR - Error in LLM processing: 
+2025-08-06 09:42:54,538 - ERROR - Error in LLM processing: 
+2025-08-06 09:44:25,534 - ERROR - Error in LLM processing: 
+2025-08-06 09:44:25,543 - INFO - Batch 6: 10 updated, 0 errors, 109.5s avg
+2025-08-06 09:44:26,045 - INFO - Processing batch 7/333 (10 entries)
+2025-08-06 09:45:56,528 - ERROR - Error in LLM processing: 
+2025-08-06 09:45:56,529 - ERROR - Error in LLM processing: 
+2025-08-06 09:47:27,523 - ERROR - Error in LLM processing: 
+2025-08-06 09:47:27,532 - INFO - Batch 7: 10 updated, 0 errors, 108.5s avg
+2025-08-06 09:47:28,038 - INFO - Processing batch 8/333 (10 entries)
+2025-08-06 09:48:59,538 - ERROR - Error in LLM processing: 
+2025-08-06 09:48:59,539 - ERROR - Error in LLM processing: 
+2025-08-06 09:48:59,539 - ERROR - Error in LLM processing: 

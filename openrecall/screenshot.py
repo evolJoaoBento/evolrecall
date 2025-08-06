@@ -16,20 +16,13 @@ from openrecall.utils import (
     is_user_active,
 )
 
+# Import the recording controller
+from openrecall.recording_controller import recording_controller
 
 def mean_structured_similarity_index(
     img1: np.ndarray, img2: np.ndarray, L: int = 255
 ) -> float:
-    """Calculates the Mean Structural Similarity Index (MSSIM) between two images.
-
-    Args:
-        img1: The first image as a NumPy array (RGB).
-        img2: The second image as a NumPy array (RGB).
-        L: The dynamic range of the pixel values (default is 255).
-
-    Returns:
-        The MSSIM value between the two images (float between -1 and 1).
-    """
+    """Calculates the Mean Structural Similarity Index (MSSIM) between two images."""
     K1, K2 = 0.01, 0.03
     C1, C2 = (K1 * L) ** 2, (K2 * L) ** 2
 
@@ -49,157 +42,111 @@ def mean_structured_similarity_index(
     )
     return ssim_index
 
-
 def is_similar(
     img1: np.ndarray, img2: np.ndarray, similarity_threshold: float = 0.9
 ) -> bool:
-    """Checks if two images are similar based on MSSIM.
-
-    Args:
-        img1: The first image as a NumPy array.
-        img2: The second image as a NumPy array.
-        similarity_threshold: The threshold above which images are considered similar.
-
-    Returns:
-        True if the images are similar, False otherwise.
-    """
+    """Checks if two images are similar based on MSSIM."""
     similarity: float = mean_structured_similarity_index(img1, img2)
     return similarity >= similarity_threshold
 
-
 def take_screenshots() -> List[np.ndarray]:
-    """Takes screenshots of all connected monitors or just the primary one.
-
-    Depending on the `args.primary_monitor_only` flag, captures either
-    all monitors or only the primary monitor (index 1 in mss.monitors).
-
-    Returns:
-        A list of screenshots, where each screenshot is a NumPy array (RGB).
-    """
+    """Takes screenshots of all connected monitors or just the primary one."""
     screenshots: List[np.ndarray] = []
     with mss.mss() as sct:
-        # sct.monitors[0] is the combined view of all monitors
-        # sct.monitors[1] is the primary monitor
-        # sct.monitors[2:] are other monitors
-        monitor_indices = range(1, len(sct.monitors))  # Skip the 'all monitors' entry
-
+        monitor_indices = range(1, len(sct.monitors))
         if args.primary_monitor_only:
-            monitor_indices = [1]  # Only index 1 corresponds to the primary monitor
+            monitor_indices = [1]
 
         for i in monitor_indices:
-            # Ensure the index is valid before attempting to grab
             if i < len(sct.monitors):
                 monitor_info = sct.monitors[i]
-                # Grab the screen
                 sct_img = sct.grab(monitor_info)
-                # Convert to numpy array and change BGRA to RGB
                 screenshot = np.array(sct_img)[:, :, [2, 1, 0]]
                 screenshots.append(screenshot)
             else:
-                # Handle case where primary_monitor_only is True but only one monitor exists (all monitors view)
-                # This case might need specific handling depending on desired behavior.
-                # For now, we just skip if the index is out of bounds.
                 print(f"Warning: Monitor index {i} out of bounds. Skipping.")
-
     return screenshots
-
-
-def record_screenshots_thread() -> None:
-    """
-    Continuously records screenshots, processes them, and stores relevant data.
-
-    Checks for user activity and image similarity before processing and saving
-    screenshots, associated OCR text, embeddings, and active application info.
-    Runs in an infinite loop, intended to be executed in a separate thread.
-    """
-    # TODO: Move this environment variable setting to the application's entry point.
-    # HACK: Prevents a warning/error from the huggingface/tokenizers library
-    # when used in environments where multiprocessing fork safety is a concern.
-    os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
-    last_screenshots: List[np.ndarray] = take_screenshots()
-
-    while True:
-        if not is_user_active():
-            time.sleep(3)  # Wait longer if user is inactive
-            continue
-
-        current_screenshots: List[np.ndarray] = take_screenshots()
-
-        # Ensure we have a last_screenshot for each current_screenshot
-        # This handles cases where monitor setup might change (though unlikely mid-run)
-        if len(last_screenshots) != len(current_screenshots):
-             # If monitor count changes, reset last_screenshots and continue
-             last_screenshots = current_screenshots
-             time.sleep(3)
-             continue
-
-
-        for i, current_screenshot in enumerate(current_screenshots):
-            last_screenshot = last_screenshots[i]
-
-            if not is_similar(current_screenshot, last_screenshot):
-                last_screenshots[i] = current_screenshot  # Update the last screenshot for this monitor
-                image = Image.fromarray(current_screenshot)
-                timestamp = int(time.time())
-                filename = f"{timestamp}_{i}.webp" # Add monitor index to filename for uniqueness
-                filepath = os.path.join(screenshots_path, filename)
-                image.save(
-                    filepath,
-                    format="webp",
-                    lossless=True,
-                )
-                text: str = extract_text_from_image(current_screenshot)
-                # Only proceed if OCR actually extracts text
-                if text.strip():
-                    embedding: np.ndarray = get_embedding(text)
-                    active_app_name: str = get_active_app_name() or "Unknown App"
-                    active_window_title: str = get_active_window_title() or "Unknown Title"
-                    insert_entry(
-                        text, timestamp, embedding, active_app_name, active_window_title, filename # Pass filename
-                    )
-
-        time.sleep(3) # Wait before taking the next screenshot
-
-    return screenshots
-
 
 def record_screenshots_thread():
-    # TODO: fix the error from huggingface tokenizers
+    """
+    MAIN RECORDING LOOP with pause/resume support
+    """
     import os
-
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-    last_screenshots = take_screenshots()
+    print("[SCREENSHOT THREAD] Starting with pause/resume support")
+    last_screenshots = None
 
     while True:
-        if not is_user_active():
+        try:
+            # === CRITICAL PAUSE CHECK ===
+            if recording_controller.is_paused:
+                print("[SCREENSHOT THREAD] *** PAUSED - WAITING ***")
+                if not recording_controller.wait_if_paused():
+                    print("[SCREENSHOT THREAD] Stop signal received, exiting")
+                    break
+                print("[SCREENSHOT THREAD] *** RESUMED ***")
+                continue
+
+            # === STOP CHECK ===
+            if not recording_controller.should_record():
+                print("[SCREENSHOT THREAD] Should not record, waiting...")
+                time.sleep(1)
+                continue
+
+            # === USER ACTIVITY CHECK ===
+            if not is_user_active():
+                print("[SCREENSHOT THREAD] User inactive, waiting...")
+                time.sleep(3)
+                continue
+
+            # === TAKE SCREENSHOTS ===
+            print("[SCREENSHOT THREAD] Taking screenshots...")
+            screenshots = take_screenshots()
+
+            if last_screenshots is None or len(last_screenshots) != len(screenshots):
+                print("[SCREENSHOT THREAD] Initializing screenshot comparison")
+                last_screenshots = screenshots
+                time.sleep(3)
+                continue
+
+            # === PROCESS SCREENSHOTS ===
+            for i, screenshot in enumerate(screenshots):
+                # Check pause state before each screenshot
+                if recording_controller.is_paused:
+                    print("[SCREENSHOT THREAD] Paused during processing, breaking")
+                    break
+                    
+                if i < len(last_screenshots):
+                    last_screenshot = last_screenshots[i]
+
+                    if not is_similar(screenshot, last_screenshot):
+                        print(f"[SCREENSHOT THREAD] Screenshot {i} changed, processing...")
+                        last_screenshots[i] = screenshot
+                        
+                        # Save image
+                        image = Image.fromarray(screenshot)
+                        timestamp = int(time.time())
+                        filename = f"{timestamp}_{i}.webp"
+                        filepath = os.path.join(screenshots_path, filename)
+                        image.save(filepath, format="webp", lossless=True)
+                        
+                        # Extract text and save to database
+                        text: str = extract_text_from_image(screenshot)
+                        if text.strip():
+                            embedding: np.ndarray = get_embedding(text)
+                            active_app_name: str = get_active_app_name() or "Unknown App"
+                            active_window_title: str = get_active_window_title() or "Unknown Title"
+                            insert_entry(text, timestamp, embedding, active_app_name, active_window_title)
+                            print(f"[SCREENSHOT THREAD] Processed screenshot for {active_app_name}")
+                    else:
+                        print(f"[SCREENSHOT THREAD] Screenshot {i} unchanged, skipping")
+
+            # Wait before next iteration
             time.sleep(3)
-            continue
 
-        screenshots = take_screenshots()
+        except Exception as e:
+            print(f"[SCREENSHOT THREAD] ERROR: {e}")
+            time.sleep(5)
 
-        for i, screenshot in enumerate(screenshots):
-
-            last_screenshot = last_screenshots[i]
-
-            if not is_similar(screenshot, last_screenshot):
-                last_screenshots[i] = screenshot
-                image = Image.fromarray(screenshot)
-                timestamp = int(time.time())
-                image.save(
-                    os.path.join(screenshots_path, f"{timestamp}.webp"),
-                    format="webp",
-                    lossless=True,
-                )
-                text: str = extract_text_from_image(current_screenshot)
-                # Only proceed if OCR actually extracts text
-                if text.strip():
-                    embedding: np.ndarray = get_embedding(text)
-                    active_app_name: str = get_active_app_name() or "Unknown App"
-                    active_window_title: str = get_active_window_title() or "Unknown Title"
-                    insert_entry(
-                        text, timestamp, embedding, active_app_name, active_window_title, filename # Pass filename
-                    )
-
-        time.sleep(3) # Wait before taking the next screenshot
+    print("[SCREENSHOT THREAD] Exiting")
