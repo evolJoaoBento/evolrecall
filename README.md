@@ -123,3 +123,423 @@ mail@datatalk.be
 
 OpenRecall is released under the [AGPLv3](https://opensource.org/licenses/AGPL-3.0), ensuring that it remains open and accessible to everyone.
 
+## 📋 Table of Contents
+
+- [Installation](#installation)
+- [MCP Servers](#mcp-servers)
+  - [OpenRecall MCP Server](#openrecall-mcp-server)
+  - [Documentation MCP Server](#documentation-mcp-server)
+  - [Claude Desktop Configuration](#claude-desktop-configuration)
+- [Database Viewer](#database-viewer)
+  - [Features](#database-viewer-features)
+  - [Configuration](#database-viewer-configuration)
+  - [Usage](#database-viewer-usage)
+- [Configuration Files](#configuration-files)
+- [Troubleshooting](#troubleshooting)
+- [API Reference](#api-reference)
+
+## 🛠️ Installation
+
+```bash
+# Install OpenRecall
+pip install openrecall
+
+# Or install from source
+git clone <repository-url>
+cd openrecall
+pip install -e .
+```
+
+## 🔌 MCP Servers
+
+OpenRecall provides two MCP servers that integrate with Claude Desktop, allowing you to query and analyze your data directly through AI conversations.
+
+### OpenRecall MCP Server
+
+The OpenRecall MCP Server provides access to your activity tracking data.
+
+#### Available Tools:
+- `query_activities` - Search and filter activities by time range and application
+- `get_app_statistics` - Get usage statistics for applications
+- `find_focus_sessions` - Identify continuous work sessions
+- `get_productivity_insights` - Analyze productivity patterns
+- `search_activities` - Search activities by keyword
+- `get_database_info` - Get database statistics and information
+
+#### Usage Examples:
+```
+# Ask Claude:
+"Show me my most used applications this week"
+"Find my longest focus sessions from yesterday" 
+"What was I working on between 2-4 PM today?"
+"Give me productivity insights for this month"
+```
+
+### Documentation MCP Server
+
+The Documentation MCP Server manages a property-based documentation system with hierarchical data organization.
+
+#### Available Tools:
+- `create_property` - Create new documentation properties
+- `get_property` - Retrieve property by key or ID
+- `search_properties` - Search properties with full-text search
+- `list_properties` - List properties with filtering options
+- `update_property` - Update existing properties
+- `delete_property` - Remove properties
+- `create_tag` - Create organizational tags
+- `get_tag_tree` - Get hierarchical tag structure
+- `rebuild_search_index` - Refresh full-text search index
+
+#### Usage Examples:
+```
+# Ask Claude:
+"Create a property for my API documentation"
+"Search for properties related to authentication"
+"Show me the tag hierarchy for the project"
+"Update the deployment property with new instructions"
+```
+
+### Claude Desktop Configuration
+
+To use the MCP servers with Claude Desktop, you need to configure them in your Claude Desktop settings.
+
+#### Configuration File Location:
+
+**Windows:**
+```
+%APPDATA%\Claude\claude_desktop_config.json
+```
+
+**macOS:**
+```
+~/Library/Application Support/Claude/claude_desktop_config.json
+```
+
+**Linux:**
+```
+~/.config/Claude/claude_desktop_config.json
+```
+
+#### Configuration Content:
+
+Create or edit the `claude_desktop_config.json` file:
+
+```json
+{
+  "mcpServers": {
+    "openrecall-mcp": {
+      "command": "python",
+      "args": [
+        "C:\\path\\to\\openrecall_mcp.py",
+        "--db-path",
+        "C:\\Users\\YourUsername\\AppData\\Roaming\\openrecall\\recall.db"
+      ]
+    },
+    "documentation-mcp": {
+      "command": "python",
+      "args": [
+        "C:\\path\\to\\documentation_mcp.py",
+        "--db-path",
+        "C:\\path\\to\\documentation.db"
+      ]
+    }
+  }
+}
+```
+
+#### Finding Your Database Paths:
+
+**OpenRecall Database:**
+```bash
+python -c "import config; print('Database path:', config.appdata_folder + '\\recall.db')"
+```
+
+**Documentation Database:**
+Usually located in the same directory as the MCP server files.
+
+#### Setup Steps:
+
+1. **Close Claude Desktop** completely
+2. **Navigate to the config directory** using File Explorer
+3. **Create or edit** `claude_desktop_config.json`
+4. **Update the paths** to match your system
+5. **Save the file**
+6. **Restart Claude Desktop**
+
+#### Verification:
+
+After restart, you should see the MCP servers listed in Claude Desktop. Test by asking Claude to query your data:
+
+```
+"Show me my activity data from today"
+"Create a documentation property for my project"
+```
+
+## 🌐 Database Viewer
+
+The Database Viewer provides a modern web interface for browsing and managing your OpenRecall and documentation data.
+
+### Database Viewer Features
+
+#### 📊 **Activities Tab**
+- View recent activities with time filtering
+- Search activities by application or title
+- Statistics cards showing total entries, unique apps, and data coverage
+- Responsive data tables with pagination
+
+#### 📋 **Properties Tab** 
+- Browse documentation properties with type filtering
+- Full-text search across property content
+- Tag filtering and hierarchical organization
+- Property tree view for nested data
+
+#### 🏷️ **Tags Tab**
+- Hierarchical tag management
+- Project-based tag organization
+- Visual tag tree with property counts
+- Color-coded tag system
+
+#### 📁 **Projects Tab**
+- Project management and overview
+- Property and tag counts per project
+- Active/inactive project status
+- Project creation and editing
+
+#### 📈 **Statistics Tab**
+- Database statistics and metrics
+- Property type distribution
+- Search index coverage
+- Database size and performance metrics
+
+#### ⚙️ **Settings Tab**
+- Database path configuration
+- Server settings (host, port)
+- Interface preferences
+- Configuration file management
+
+### Database Viewer Configuration
+
+The Database Viewer uses an INI configuration file for settings management.
+
+#### Configuration File: `database_viewer.ini`
+
+```ini
+[database]
+recall_db_path = C:\Users\YourUsername\AppData\Roaming\openrecall\recall.db
+docs_db_path = documentation.db
+
+[server]
+host = 127.0.0.1
+port = 8084
+
+[interface]
+auto_refresh_seconds = 30
+default_page_size = 20
+
+[metadata]
+last_updated = 2024-01-01T00:00:00
+version = 2.0.0
+```
+
+#### Configuration Options:
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| `recall_db_path` | Path to OpenRecall activity database | (required) |
+| `docs_db_path` | Path to documentation database | `documentation.db` |
+| `host` | Web server bind address | `127.0.0.1` |
+| `port` | Web server port | `8084` |
+| `auto_refresh_seconds` | UI refresh interval | `30` |
+| `default_page_size` | Items per page | `20` |
+
+### Database Viewer Usage
+
+#### Starting the Viewer:
+
+```bash
+# Basic usage (will create default config)
+python database_viewer.py --recall-db path/to/recall.db
+
+# With custom configuration file
+python database_viewer.py --config my_config.ini
+
+# Specify all options
+python database_viewer.py --recall-db path/to/recall.db --docs-db path/to/docs.db --port 8085
+
+# Create default configuration file
+python database_viewer.py --create-config
+```
+
+#### Command Line Options:
+
+| Option | Description |
+|--------|-------------|
+| `--config` | Path to configuration file |
+| `--recall-db` | OpenRecall database path (overrides config) |
+| `--docs-db` | Documentation database path (overrides config) |
+| `--port` | Server port (overrides config) |
+| `--host` | Server host (overrides config) |
+| `--create-config` | Create default config file and exit |
+
+#### Accessing the Interface:
+
+1. Start the database viewer
+2. Open your browser to `http://localhost:8084` (or configured port)
+3. Use the navigation tabs to explore your data
+4. Configure settings through the Settings tab
+
+## 📁 Configuration Files
+
+### Main Configuration: `database_viewer.ini`
+- Database paths and connection settings
+- Web server configuration
+- UI preferences and defaults
+
+### Claude Desktop: `claude_desktop_config.json`
+- MCP server configuration
+- Python command and argument specification
+- Database path mapping for MCP servers
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### MCP Server Connection Failed
+```
+ERROR: Database not found: C:\path\to\your\recall.db
+```
+**Solution:** Update the database path in `claude_desktop_config.json` with the actual path to your database.
+
+#### Python Module Not Found
+```
+ModuleNotFoundError: No module named 'mcp'
+```
+**Solution:** Install the MCP SDK:
+```bash
+pip install mcp
+```
+
+#### Database Viewer Won't Start
+```
+ERROR: OpenRecall database not found
+```
+**Solution:** 
+1. Check the database path in your configuration
+2. Ensure OpenRecall has been running to create the database
+3. Use `--create-config` to generate a default configuration
+
+#### Port Already in Use
+```
+Address already in use
+```
+**Solution:** Either stop the existing service or use a different port:
+```bash
+python database_viewer.py --port 8085
+```
+
+### Debug Steps
+
+1. **Verify Database Paths:**
+   ```bash
+   python -c "import os; print('Recall DB exists:', os.path.exists('path/to/recall.db'))"
+   ```
+
+2. **Test MCP Server Directly:**
+   ```bash
+   python openrecall_mcp.py --db-path path/to/recall.db
+   ```
+
+3. **Check Configuration:**
+   ```bash
+   python database_viewer.py --create-config
+   cat database_viewer.ini
+   ```
+
+4. **Validate JSON Configuration:**
+   Use an online JSON validator to check your `claude_desktop_config.json` syntax.
+
+### Log Locations
+
+- **Claude Desktop Logs:** Available in Claude Desktop's developer tools
+- **Database Viewer:** Console output when running the server
+- **MCP Servers:** stderr output visible in Claude Desktop logs
+
+## 📚 API Reference
+
+### OpenRecall MCP Server API
+
+#### `query_activities(time_range, app_filter?, limit?)`
+Query activities with time and application filters.
+
+**Parameters:**
+- `time_range`: "today" | "yesterday" | "week" | "month" | "all"
+- `app_filter`: Optional application name filter
+- `limit`: Maximum results (default: 20)
+
+#### `get_app_statistics(time_range)`
+Get application usage statistics.
+
+**Parameters:**
+- `time_range`: Time period for statistics
+
+#### `find_focus_sessions(min_duration?, days_back?)`
+Find continuous work sessions.
+
+**Parameters:**
+- `min_duration`: Minimum session length in minutes (default: 30)
+- `days_back`: Days to analyze (default: 7)
+
+### Documentation MCP Server API
+
+#### `create_property(key, value, type?, parent_key?, tags?)`
+Create a new documentation property.
+
+**Parameters:**
+- `key`: Unique identifier for the property
+- `value`: Property content
+- `type`: Property type (default: "text")
+- `parent_key`: Parent property key for hierarchy
+- `tags`: Array of tag names
+
+#### `search_properties(query, limit?)`
+Full-text search across properties.
+
+**Parameters:**
+- `query`: Search query string
+- `limit`: Maximum results (default: 10)
+
+### Database Viewer Web API
+
+The Database Viewer exposes REST endpoints for web interface functionality:
+
+- `GET /api/activities` - Get activity data
+- `GET /api/properties` - Get documentation properties
+- `GET /api/tags` - Get tag hierarchy
+- `GET /api/projects` - Get project list
+- `GET /api/database-stats` - Get database statistics
+- `GET /api/config` - Get current configuration
+- `POST /api/config` - Update configuration
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+[Add your license information here]
+
+## 🆘 Support
+
+For support and questions:
+- Check the [Troubleshooting](#troubleshooting) section
+- Review Claude Desktop MCP documentation
+- Open an issue on the repository
+
+---
+
+**Happy tracking and documenting! 🚀**
+
